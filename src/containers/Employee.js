@@ -13,14 +13,19 @@ color: 'olive'
 }
 let Employee = ({ employee }) => (
 employee ?
-<article style={articleStyle} >
-  <div>
-    <h1>{employee.firstName} {employee.firstName}</h1>
-    <img style={imgStyle} src={employee.urlToImage} alt="" />
-    <h4>{employee.description}</h4>
-    <a href={employee.url}>READ MORE</a>
-  </div>
-</article> :
+employee.map((profile)=>{
+  return (
+    <article style={articleStyle} >
+      <div className='avatar'><img style={imgStyle} src={profile.avatar} alt={profile.avatar} title={profile.avatar} /></div>
+      <div classname='bio'>
+        <h1>{profile.firstName} {profile.firstName}</h1>
+        <h4>{profile.bio}</h4>
+        <a href='/'>DETAILS</a>
+      </div>
+    </article>
+  )
+})
+ :
 null
 );
 const mapStateToProps = (state) => ({
