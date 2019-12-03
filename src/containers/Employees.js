@@ -8,10 +8,12 @@ employee && !displayDetails ?
   employee.map((profile, i)=>{
     return (
       <article key={i}>
-        <div className='avatar'><img src={profile.avatar} alt={profile.avatar} title={profile.avatar} /></div>
+        <div className='avatar'>
+          <img src={profile.avatar} alt={profile.avatar} title={profile.avatar} />
+        </div>
         <div className='bio'>
           <h1>{profile.firstName} {profile.lastName}</h1>
-          <h4>{profile.bio}</h4>
+          <p>{profile.bio}</p>
           <button onClick={() => displayEmployee(profile)}>DETAILS</button>
         </div>
       </article>
