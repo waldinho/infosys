@@ -7,3 +7,6 @@ export const displayEmployee = (employee) => ({
     employee,
 })
 
+export const closeLightbox = (employee) => ({
+    type: 'CLOSE_LIGHTBOX',
+})

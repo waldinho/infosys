@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import Button from './Button'
+import { closeLightbox } from '../actions';
 
 let Lightbox = ({lightbox}) => {
   return (
@@ -16,5 +17,8 @@ let Lightbox = ({lightbox}) => {
 const mapStateToProps = (state) => ({
   lightbox: state.lightbox,
 })
+const mapDispatchToProps = {
+  closeLightbox: closeLightbox,
+}
 
-export default connect(mapStateToProps,null)(Lightbox)
+export default connect(mapStateToProps,mapDispatchToProps)(Lightbox)

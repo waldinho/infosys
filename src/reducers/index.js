@@ -4,21 +4,23 @@ const reducer = (state = {}, action) => {
             return { 
                 ...state, 
                 loading: true,
-                displayDetails: false,
             }
         case 'EMPLOYEE_RECEIVED':
             return { 
                 ...state, 
                 employee: action.json, 
                 loading: false,
-                displayDetails: false,
             }
         case 'DISPLAY_EMPLOYEE':
-            console.log('state: ', state)
             return  {
                 ...state,
                 lightbox: action.employee,
                 displayDetails: true,
+            }
+        case 'CLOSE_LIGHTBOX':
+            return  {
+                ...state,
+                displayDetails: false,
             }
         default:
             return state

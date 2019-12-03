@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getEmployee } from '../actions';
-let Button=({getEmployee})=>(
-   <button onClick={getEmployee}>CLOSE</button>
+import { closeLightbox } from '../actions';
+let Button=({closeLightbox})=>(
+   <button onClick={closeLightbox}>CLOSE</button>
 )
 const mapDispatchToProps = {
-    getEmployee: getEmployee,
+    closeLightbox: closeLightbox,
 }
 
 export default connect(null,mapDispatchToProps)(Button)

@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Employees from '../containers/Employees'
 import Loading from '../containers/Loading'
 import { getEmployee } from '../actions';
-let App=({getEmployee})=> {
+import Lightbox from './Lightbox';
+let App=({getEmployee, displayDetails})=> {
   useEffect(() => {
     getEmployee()
   })
@@ -11,12 +12,17 @@ let App=({getEmployee})=> {
     <>
       <Loading />
       <Employees />
+      {displayDetails ? <Lightbox /> : null}
     </>
   )
 }
+
+const mapStateToProps = (state) => ({
+  displayDetails: state.displayDetails,
+})
 
 const mapDispatchToProps = {
   getEmployee: getEmployee,
 }
 
-export default connect(null,mapDispatchToProps)(App)
+export default connect(mapStateToProps,mapDispatchToProps)(App)

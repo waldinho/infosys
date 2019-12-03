@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { displayEmployee } from '../actions';
-import Lightbox from '../components/Lightbox';
 
-let Employee = ({ employee, displayDetails, displayEmployee }) => (
-employee && !displayDetails ?
+let Employee = ({ employee, displayEmployee }) => (
+employee ?
   employee.map((profile, i)=>{
     return (
       <article key={i}>
@@ -20,14 +19,11 @@ employee && !displayDetails ?
     )
   })
   : 
-  displayDetails ?
-  <Lightbox />
-  : null
+  null
 );
 
 const mapStateToProps = (state) => ({
   employee: state.employee,
-  displayDetails: state.displayDetails,
 })
 const mapDispatchToProps = {
   displayEmployee: displayEmployee,
