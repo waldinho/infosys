@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { connect } from 'react-redux';
-import Employee from '../containers/Employee'
+import Employees from '../containers/Employees'
 import Loading from '../containers/Loading'
 import { getEmployee } from '../actions';
 let App=({getEmployee})=> {
@@ -10,13 +10,13 @@ let App=({getEmployee})=> {
   return (
     <>
       <Loading />
-      <Employee />
+      <Employees />
     </>
   )
 }
 
 const mapDispatchToProps = {
-     getEmployee: getEmployee,
-};
-App = connect(null,mapDispatchToProps)(App);
-export default App;
+  getEmployee: getEmployee,
+}
+
+export default connect(null,mapDispatchToProps)(App)

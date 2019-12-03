@@ -10,5 +10,5 @@ loading ?
 null
 );
 const mapStateToProps = (state) => ({loading: state.loading})
-Loading = connect(mapStateToProps,null)(Loading)
-export default Loading;
+
+export default connect(mapStateToProps,null)(Loading)
