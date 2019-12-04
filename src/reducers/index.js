@@ -5,11 +5,20 @@ const reducer = (state = {}, action) => {
                 ...state, 
                 loading: true,
             }
+        case 'GET_COMPANY':
+            return { 
+                ...state, 
+            }
         case 'EMPLOYEE_RECEIVED':
             return { 
                 ...state, 
                 employee: action.json, 
                 loading: false,
+            }
+        case 'COMPANY_RECEIVED':
+            return { 
+                ...state, 
+                company: action.json, 
             }
         case 'DISPLAY_EMPLOYEE':
             return  {

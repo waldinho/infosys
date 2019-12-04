@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import { displayEmployee } from '../actions';
 
 let Employee = ({ employee, displayEmployee }) => (
+
+
+  
 employee ?
   employee.map((profile, i)=>{
     return (
@@ -46,7 +49,13 @@ const Wrapper = styled.div`
     line-height: 1rem;
     margin: 0 1% 1% 1%;
     .details {
-      margin: 0 5%;
+      margin: 0 3% 0 8%;
+      @media screen and (min-width: 321px) {
+        margin: 0 1rem;
+      }
+      @media screen and (min-width: 789px) {
+        margin: 0 1.5rem;
+      }
       p {
         font-size: 0.95rem;
       }

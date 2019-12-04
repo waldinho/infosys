@@ -4,12 +4,13 @@ import '../App.css';
 import styled from 'styled-components';
 import Employees from '../containers/Employees'
 import Loading from '../containers/Loading'
-import { getEmployee } from '../actions';
+import { getEmployee, getCompany } from '../actions';
 import Lightbox from './Lightbox';
 import Header from './Header';
 
-let App=({getEmployee, displayDetails})=> {
+let App=({getEmployee, getCompany, displayDetails})=> {
   useEffect(() => {
+    getCompany()
     getEmployee()
   })
   return (
@@ -32,6 +33,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   getEmployee: getEmployee,
+  getCompany: getCompany,
 }
 
 const Wrapper = styled.div`
@@ -41,7 +43,7 @@ const Wrapper = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   padding: 2.5%
-  margin: 10vh 0 0 0;
+  margin: 18vh 0 0 0;
 }`
 
 
