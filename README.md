@@ -1,4 +1,4 @@
-<h2>Clearscore technical test - James Waller</h2>
+<h2>Infosys technical test - James Waller</h2>
 
 ### `You can view the web hosted version here:` 
 <a href=""></a>
