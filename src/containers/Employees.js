@@ -7,8 +7,8 @@ let Employee = ({ employee, displayEmployee }) => (
 employee ?
   employee.map((profile, i)=>{
     return (
-      <Wrapper>
-        <div key={i} className='profile'>
+      <Wrapper key={i}>
+        <div className='profile'>
           <div className='avatar'>
             <img src={profile.avatar} alt={profile.avatar} title={profile.avatar} />
           </div>
