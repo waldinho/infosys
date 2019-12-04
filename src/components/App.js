@@ -4,12 +4,15 @@ import Employees from '../containers/Employees'
 import Loading from '../containers/Loading'
 import { getEmployee } from '../actions';
 import Lightbox from './Lightbox';
+import Header from './Header';
+
 let App=({getEmployee, displayDetails})=> {
   useEffect(() => {
     getEmployee()
   })
   return (
     <>
+      <Header/>
       <Loading />
       <Employees />
       {displayDetails ? <Lightbox /> : null}
